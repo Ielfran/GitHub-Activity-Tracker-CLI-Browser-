@@ -17,7 +17,7 @@ function fetchUserActivity(username) {
     const options = {
         hostname: 'api.github.com',
         path: `/users/${username}/events/public`,
-        method: 'GET', // Fixed typo: 'mehtod' → 'method'
+        method: 'GET',
         headers: {
             'User-Agent': 'NodeJS-GitHub-Activity-App',
             'Accept': 'application/vnd.github+json',
@@ -36,7 +36,7 @@ function fetchUserActivity(username) {
                 try {
                     resolve(JSON.parse(data));
                 } catch (e) {
-                    reject(new Error(`Parse error: ${e.message}`)); // Fixed: Proper error reference
+                    reject(new Error(`Parse error: ${e.message}`));
                 }
             });
         }).on('error', e => reject(new Error(`Network error: ${e.message}`)));
@@ -87,7 +87,7 @@ async function main(username) {
         const events = await fetchUserActivity(username);
         displayActivity(username, events);
     } catch (err) {
-        console.error(chalk.red.bold(`Error: ${err.message}`)); // Fixed: 'error' → 'err'
+        console.error(chalk.red.bold(`Error: ${err.message}`));
         process.exit(1);
     }
 }
