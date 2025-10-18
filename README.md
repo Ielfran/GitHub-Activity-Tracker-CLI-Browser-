@@ -1,10 +1,5 @@
 # GitHub Activity Tracker CLI 🚀
 
-![Node.js](https://img.shields.io/badge/Node.js-v16+-green?logo=node.js)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)
-![GitHub API](https://img.shields.io/badge/GitHub%20API-v3-orange?logo=github)
-
 A lightweight command-line interface (CLI) tool to fetch and display recent **public GitHub activity** for any user. Pulls events like pushes, stars, issues, and more directly from the GitHub API, with colorful output for easy reading. Perfect for quick checks on developer activity! 🌟
 
 ---
@@ -72,31 +67,3 @@ $ node index.js non-existent-user
 Fetching activity for non-existent-user...
 Error: User not found: non-existent-user
 ```
-
----
-
-## 📦 Dependencies
-
-- **[commander](https://www.npmjs.com/package/commander)**: Parses command-line arguments
-- **[chalk](https://www.npmjs.com/package/chalk)**: Adds colorful console output
-- **Node.js built-in modules**: `https` for API requests
-
----
-
-## ℹ️ Notes
-
-- This tool uses the public GitHub API (`/users/{username}/events/public`), which doesn't require an API token but is rate-limited (60 requests/hour unauthenticated).
-- Events are limited to the most recent 15 for brevity; the API returns up to 30 by default.
-- Only public events are shown – private repos require authentication.
-- No data is stored locally; it's fetched fresh each time.
-- For production use, consider adding rate limiting or caching to respect GitHub's API guidelines.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-*Built with 💻 and ☕ to track GitHub vibes! Contribute on GitHub if you like it.*
